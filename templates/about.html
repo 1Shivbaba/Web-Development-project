@@ -1,0 +1,60 @@
+{% include "header.html" %}
+        <!-- About Start-->
+        <div class="about mt-100">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Us</h2>
+                    <p>
+                        The customer is very important, the customer will be followed by the customer. Children and young people need financing now                    
+                        </p>
+                </div>
+                
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="about-img">
+                            <img src="/static/img/about.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h2>Welcome to Our Site</h2>
+                            
+                            <p>
+                                The customer is very important, the customer will be followed by the customer. Tomorrow I will make the sauce. I am whole and fair. At the border, the vehicles are trucks. The real estate market and the real estate market are very popular, and the customer will be followed by the customer. Tomorrow I will make the sauce. I am whole and fair. At the border, the vehicles are trucks. He wants to invest in real estate
+                            </p>
+                            <a class="btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {% for a in About_data %}
+                    <div class="col-md-6">
+                        <div class="about-img">
+                            <img src="/media/{{a.about_img}}" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h2>{{a.about_title}}</h2>
+                            <p>
+                                {{a.about_desc |safe }}
+                            </p>
+                            <a class="btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% comment %} <div class="col-md-6">
+                        <div class="about-img">
+                            <img src="/static/img/about-goal.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h2>Our Goal</h2>
+                            <p>
+                               The customer is very important, the customer will be followed by the customer. Tomorrow I will make the sauce. I am whole and fair. At the border, the vehicles are trucks. He wants to invest in real estate
+                            </p>
+                            <a class="btn" href="#">Read More</a>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+{% include "footer.html" %}

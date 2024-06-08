@@ -1,0 +1,150 @@
+{% include "header.html" %}
+
+        <!-- Service Start -->
+        <div class="service mt-100">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Services</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus eget nunc imperdiet 
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <form  method="get">
+                        <input type="text" name="servicename" value="" />
+                        <input  type="submit" value="Search"/>
+                    </form>
+                </div>
+                <br>
+                <div class="row"> 
+                    {% for i in serviceData %}
+                    
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="{{i.service_icon}}"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">{{i.service_title}}</a></h4>
+                                <p>
+                                     {{i.service_desc}}
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <b style="color: brown;">No Data Found</b>
+                    {% endfor %}
+                   
+
+                    
+                    {% comment %} <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-laptop"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">Web Development</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-tablet-portrait"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">App Design</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-phone-portrait"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">App Development</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-desktop"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">Web Design</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-laptop"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">Web Development</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-tablet-portrait"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">App Design</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-phone-portrait"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">App Development</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        {% if serviceData.has_previous %}
+                      <li class="page-item ">
+                        <a class="page-link" href="/services/?page=1" tabindex="-1" >First</a>
+                      </li>
+                      <li class="page-item  ">
+                        <a class="page-link" href="/services/?page={{serviceData.previous_page_number}}" tabindex="-1">Previous</a>
+                      </li>
+                      {% endif %}
+
+                      {% for n in pagelist %}
+                      <li class="page-item"><a class="page-link"  href="/services/?page={{n}}">{{n}}</a></li>
+                      {% endfor%}
+
+                      {% if serviceData.has_next %}
+                      
+                      <li class="page-item">
+                        <a class="page-link" href="/services/?page={{serviceData.next_page_number}}">Next</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="/services/?page={{lastpage}}">Last</a>
+                      </li>
+                      {% endif %}
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+        <!-- Service End -->
+
+{% include "footer.html" %}

@@ -1,0 +1,678 @@
+{% extends "base.html" %}
+{% block content %}
+  
+
+  
+
+
+        <!-- Header Start-->
+        <div class="header">
+            <div id="header-slider" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#header-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-slider" data-slide-to="1"></li>
+                    <li data-target="#header-slider" data-slide-to="2"></li>
+                </ul>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="carousel-content">
+                                    <h2>Welcome to Techtics ! </h2>
+                                    <p>Excellence is non-negotiable at Techtics. We're committed to delivering top-notch solutions that exceed your expectations.</p>
+                                    <a class="btn" href="">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="carousel-img">
+                                    <img src="/static/img/slider-1.png" alt="Image">
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="carousel-content">
+                                    <h2>Discover the Possibilities</h2>
+                                    <p>Unleash the potential of your ideas with our comprehensive suite of services. Whether you're a startup aiming to disrupt the market or an established enterprise seeking to stay ahead, Techtics is your trusted partner for success.</p>
+                                    <a class="btn" href="">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="carousel-img">
+                                    <img src="/static/img/slider-2.png" alt="Image">
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="carousel-content">
+                                    <h2>Why Choose Techtics?</h2>
+                                    <p>Your vision is our priority. We work closely with you to understand your goals and tailor our approach to suit your unique needs.                  </p>
+                                    <a class="btn" href="">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="carousel-img">
+                                    <img src="/static/img/slider-3.png" alt="Images">
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#header-slider" data-slide="prev">
+                    <i class="ion-ios-arrow-back"></i>
+                </a>
+                <a class="carousel-control-next" href="#header-slider" data-slide="next">
+                    <i class="ion-ios-arrow-forward"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Header End-->
+
+        <!-- About Start-->
+        <div class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Us</h2>
+                    <p>
+                        At Techtics, we're more than just developers; we're visionaries, creators, and problem solvers. With a passion for technology and a commitment to excellence, we strive to redefine the digital landscape. Learn more about our journey, values, and the team behind the magic.
+                    </p>
+                </div>
+                
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="about-img">
+                            <img src="/static/img/about.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h2>Welcome to Our Site</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum rutrum ligula. Integer ac porttitor mi. In finibus vehicula aliquet. Vestibulum et velit placerat pretium lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum rutrum ligula. Integer ac porttitor mi. In finibus vehicula aliquet. Vestibulum et velit placerat pretium lorem
+                            </p>
+                            <a class="btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="about-img">
+                            <img src="/static/img/about-story.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h2>Our Story</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum rutrum ligula. Integer ac porttitor mi. In finibus vehicula aliquet. Vestibulum et velit placerat pretium lorem
+                            </p>
+                            <a class="btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about-img">
+                            <img src="/static/img/about-goal.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h2>Our Goal</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum rutrum ligula. Integer ac porttitor mi. In finibus vehicula aliquet. Vestibulum et velit placerat pretium lorem
+                            </p>
+                            <a class="btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+        <!-- Service Start -->
+        <div class="service">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Services</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                         Pellentesque ac lacus eget nunc imperdiet 
+                    </p>
+                </div>
+                
+                <div class="row">
+                    {% for i in serviceData %}
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="{{i.service_icon}}"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">{{i.service_title}}</a></h4>
+                                <p>
+                                     {{i.service_desc}}
+
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% comment %} <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-laptop"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">Web Development</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-tablet-portrait"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">App Design</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-phone-portrait"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">App Development</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-desktop"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">Annotation</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-laptop"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">E-commerce Listing </a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-tablet-portrait"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">Graphic Design</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-phone-portrait"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">Video Editing</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+        <!-- Call To Action Start -->
+        <div class="call-to-action">
+            <div class="container text-center">
+                <div class="section-header">
+                    <h2>Schedule a call </h2>
+                    <p>
+                        Every Person is important to us. If you have any query Please let us know we are here to help out you.  
+                    </p>
+                </div>
+                <a class="btn" href="#">Call To Action</a>
+            </div>
+        </div>
+        <!-- Call To Action End -->
+
+
+        {% comment %} <!-- Skills Start-->
+        <div class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Skills</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus eget nunc imperdiet 
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="skill-item">
+                            <h3>Front End Skills</h3>
+                            <div class="skill-name">
+                                <p>HTML</p><p>85%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            
+                            <div class="skill-name">
+                                <p>CSS</p><p>95%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            
+                            <div class="skill-name">
+                                <p>jQuery</p><p>80%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="skill-item">
+                            <h3>Back End Skills</h3>
+                            <div class="skill-name">
+                                <p>PHP</p><p>90%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            
+                            <div class="skill-name">
+                                <p>Laravel</p><p>85%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            
+                            <div class="skill-name">
+                                <p>MySQL</p><p>95%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Skills End--> {% endcomment %}
+        
+        
+        <!-- Counters Start-->
+        <div class="counters">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-6 text-center">
+                        <i class="ion-md-person"></i>
+                        <h2 data-toggle="counter-up">100</h2>
+                        <p>Our Staffs</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <i class="ion-md-people"></i>
+                        <h2 data-toggle="counter-up">200</h2>
+                        <p>Our Clients</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <i class="ion-md-checkmark"></i>
+                        <h2 data-toggle="counter-up">300</h2>
+                        <p>Completed Projects</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <i class="ion-md-trending-up"></i>
+                        <h2 data-toggle="counter-up">400</h2>
+                        <p>Running Projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Counters End-->
+
+        {% comment %} <!-- Portfolio Start -->
+        <div class="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Portfolio</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus eget nunc imperdiet 
+                    </p>
+                </div>
+
+                <div class="row portfolio-container">
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-img">
+                            <img src="/static/img/portfolio-1.jpg" class="img-fluid" alt="Portfolio">
+                            <a href="/static/img/portfolio-1.jpg" data-lightbox="portfolio" data-title="Lorem ipsum dolor" class="link-preview" title="Preview"><i class="ion-md-eye"></i></a>
+                            <a href="" class="link-details" title="More Details"><i class="ion-md-open"></i></a>
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h3>Lorem ipsum dolor</h3>
+                            <p>Web Design</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-img">
+                            <img src="/static/img/portfolio-2.jpg" class="img-fluid" alt="Portfolio">
+                            <a href="/static/img/portfolio-2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Nulla ullamcorper pharetra" title="Preview"><i class="ion-md-eye"></i></a>
+                            <a href="" class="link-details" title="More Details"><i class="ion-md-open"></i></a>
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h3>Nulla ullamcorper pharetra</h3>
+                            <p>Web Development</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-img">
+                            <img src="/static/img/portfolio-3.jpg" class="img-fluid" alt="Portfolio">
+                            <a href="/static/img/portfolio-3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Phasellus eget dictum" title="Preview"><i class="ion-md-eye"></i></a>
+                            <a href="" class="link-details" title="More Details"><i class="ion-md-open"></i></a>
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h3>Phasellus eget dictum</h3>
+                            <p>App Design</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-img">
+                            <img src="/static/img/portfolio-4.jpg" class="img-fluid" alt="Portfolio">
+                            <a href="/static/img/portfolio-4.jpg" data-lightbox="portfolio" data-title="Lorem ipsum dolor" class="link-preview" title="Preview"><i class="ion-md-eye"></i></a>
+                            <a href="" class="link-details" title="More Details"><i class="ion-md-open"></i></a>
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h3>Donec mattis vestibulum</h3>
+                            <p>App Development</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-img">
+                            <img src="/static/img/portfolio-5.jpg" class="img-fluid" alt="Portfolio">
+                            <a href="/static/img/portfolio-5.jpg" class="link-preview" data-lightbox="portfolio" data-title="Nulla ullamcorper pharetra" title="Preview"><i class="ion-md-eye"></i></a>
+                            <a href="" class="link-details" title="More Details"><i class="ion-md-open"></i></a>
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h3>Pellentesque ullamcorper</h3>
+                            <p>Web Design</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-img">
+                            <img src="/static/img/portfolio-6.jpg" class="img-fluid" alt="Portfolio">
+                            <a href="/static/img/portfolio-6.jpg" class="link-preview" data-lightbox="portfolio" data-title="Phasellus eget dictum" title="Preview"><i class="ion-md-eye"></i></a>
+                            <a href="" class="link-details" title="More Details"><i class="ion-md-open"></i></a>
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h3>Sed pretium sapien</h3>
+                            <p>Web Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio End -->
+        
+        <!-- Team Start -->
+        <div class="team">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Meet our team</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus eget nunc imperdiet 
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 team-item">
+                        <div class="team-img">
+                            <img src="/static/img/team-1.jpg" class="img-fluid" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="ion-logo-twitter"></i></a>
+                                <a href="#"><i class="ion-logo-facebook"></i></a>
+                                <a href="#"><i class="ion-logo-linkedin"></i></a>
+                                <a href="#"><i class="ion-logo-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>John P. Haight</h3>
+                            <p>Web Designer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6 team-item">
+                        <div class="team-img">
+                            <img src="/static/img/team-2.jpg" class="img-fluid" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="ion-logo-twitter"></i></a>
+                                <a href="#"><i class="ion-logo-facebook"></i></a>
+                                <a href="#"><i class="ion-logo-linkedin"></i></a>
+                                <a href="#"><i class="ion-logo-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>David R. Bernard</h3>
+                            <p>Web Developer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6 team-item">
+                        <div class="team-img">
+                            <img src="/static/img/team-3.jpg" class="img-fluid" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="ion-logo-twitter"></i></a>
+                                <a href="#"><i class="ion-logo-facebook"></i></a>
+                                <a href="#"><i class="ion-logo-linkedin"></i></a>
+                                <a href="#"><i class="ion-logo-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Dana A. Thomas</h3>
+                            <p>Apps Developer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6 team-item">
+                        <div class="team-img">
+                            <img src="/static/img/team-4.jpg" class="img-fluid" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="ion-logo-twitter"></i></a>
+                                <a href="#"><i class="ion-logo-facebook"></i></a>
+                                <a href="#"><i class="ion-logo-linkedin"></i></a>
+                                <a href="#"><i class="ion-logo-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Ava M. Proctor</h3>
+                            <p>Apps Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End --> {% endcomment %}
+
+        {% comment %} <!-- Testimonials Start -->
+        <div class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Reviews</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus eget nunc imperdiet 
+                    </p>
+                </div>
+
+                <div class="owl-carousel testimonials-carousel">
+                    <div class="testimonial-item row align-items-center">
+                        <div class="testimonial-img">
+                            <img src="/static/img/testimonial-1.jpg" alt="Testimonial image">
+                        </div>
+                        <div class="testimonial-text">
+                            <h3>Anna M. Brzezinski</h3>
+                            <h4>businesswoman</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Maecenas dictum vel
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item row align-items-center">
+                        <div class="testimonial-img">
+                            <img src="/static/img/testimonial-2.jpg" alt="Testimonial image">
+                        </div>
+                        <div class="testimonial-text">
+                            <h3>Shirley H. Lee</h3>
+                            <h4>businesswoman</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Maecenas dictum vel
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item row align-items-center">
+                        <div class="testimonial-img">
+                            <img src="/static/img/testimonial-3.jpg" alt="Testimonial image">
+                        </div>
+                        <div class="testimonial-text">
+                            <h3>Kerry E. Thomas</h3>
+                            <h4>businesswoman</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Maecenas dictum vel
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item row align-items-center">
+                        <div class="testimonial-img">
+                            <img src="/static/img/testimonial-4.jpg" alt="Testimonial image">
+                        </div>
+                        <div class="testimonial-text">
+                            <h3>Kerry E. Thomas</h3>
+                            <h4>businesswoman</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Maecenas dictum vel
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item row align-items-center">
+                        <div class="testimonial-img">
+                            <img src="/static/img/testimonial-5.jpg" alt="Testimonial image">
+                        </div>
+                        <div class="testimonial-text">
+                            <h3>Kerry E. Thomas</h3>
+                            <h4>businesswoman</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Maecenas dictum vel
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonials End -->
+         {% endcomment %}
+        <!-- Clients Start -->
+        <div class="clients">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Clients</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus eget nunc imperdiet  
+                    </p>
+                </div>
+
+                <div class="owl-carousel clients-carousel">
+                    <img src="/static/img/client-1.jpg" alt="Client Logo">
+                    <img src="/static/img/client-2.jpg" alt="Client Logo">
+                    <img src="/static/img/client-3.jpg" alt="Client Logo">
+                    <img src="/static/img/client-4.jpg" alt="Client Logo">
+                    <img src="/static/img/client-5.jpg" alt="Client Logo">
+                    <img src="/static/img/client-6.jpg" alt="Client Logo">
+                    <img src="/static/img/client-7.jpg" alt="Client Logo">
+                    <img src="/static/img/client-8.jpg" alt="Client Logo">
+                </div>
+
+            </div>
+        </div>
+        <!-- Clients End -->
+
+        <!-- Contact Start -->
+        <div class="contact mt-100">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    <p>
+                        The customer is very important, the customer will be followed by the customer. Children and young people need financing now                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form">
+                            
+                            <form class="contactForm" method="post" action ="/contact/thanks"> 
+                                <!-- action="https://api.web3forms.com/submit"  -->
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <input type="hidden" name="access_key" value="126a7a8e-a7da-4d15-96c6-9af8111eb6d6">
+                                        <input type="text" class="form-control" placeholder="Your Name" name="name" value="{{name}}" required/>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <input type="email" class="form-control" placeholder="Your Email" name="email" value="{{mail}}" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Subject" name="subject"  required />
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="5" placeholder="Message" name="message" required></textarea>
+                                </div>
+                                <div><button class="btn" type="submit" value="Submit" >Send Message</button></div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="map">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26361250.667320687!2d-113.75533773453304!3d36.24128894212527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sbd!4v1574923227698!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen=" "
+                        frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+       
+{% endblock  %}      

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="IT Company Website Template" name="keywords">
+        <meta content="IT Company Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="/static/img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"> 
+
+        <!-- Libraries CSS -->
+        <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+        <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Main Stylesheet -->
+        <link href="/static/css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Nav Start -->
+        <div id="nav">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md bg-primary navbar-light custom-navbar">
+
+                    <a href="/" class="navbar-brand">
+                        <img src="/static/img/logo.png" alt="Logo" width="250" height="250">
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav ml-auto">
+                          <!-- {{request.path}} -->
+                            <a href="/" class="nav-item nav-link  {% if request.path == '/' %} active {% endif %}">Home</a>
+                            <a href="{% url 'Services' %}" target="_blank" class="nav-item nav-link {% if request.path == '/services/' %} active {% endif %}">Service</a>
+                            <a href="/about" class="nav-item nav-link {% if request.path == '/about/' %} active {% endif %}">About</a>
+                            
+                            <a href="/career" target="_blank" class="nav-item nav-link {% if request.path == '/career/' %} active {% endif %} ">Career</a>
+                            
+                            <a href="/contact" target="_blank" class="nav-item nav-link {% if request.path == '/contact/' %} active {% endif %}">Contact</a>
+                            <!-- <div class="nav-item dropdown">
+                                <a href=" " class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu">
+                                    <a href="{% url 'Skill' %}" class="dropdown-item">Skills</a>
+                                    <a href="/team" class="dropdown-item">Team Members</a>
+                                    <a href="/review" class="dropdown-item">Reviews</a>
+                                    <a href="{% url 'Ourcliets' %}" class="dropdown-item">Clients</a>
+                                    <a href="{% url 'single' %}" class="dropdown-item">Single Page</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav End -->

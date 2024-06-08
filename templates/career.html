@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+
+ <!-- Contact Start -->
+ <div class="contact mt-100">
+    <div class="container">
+        <div class="section-header">
+            <h2>Join our team </h2>
+            <p>
+                Does Innovative, Creative, Interesting, Thriving Career Expedition Appeal to You?
+                Then, Techtics is the place meant for you.
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form">
+                    <form class="contactForm" method="post" action="/career/thankyou">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group col-sm-6">
+                                <label>Name</label>
+                                <input type="text" name= "emname"  class="form-control" placeholder="Your Full Name" required />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label>Email Address</label>
+                                <input type="email" name="emmail" class="form-control" placeholder="Your Email" required />
+                            </div>
+                        </div>
+                        
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label>Contact Number</label>
+                            <input type="text" name="mobile" class="form-control" placeholder="Mobile Number/Phone" required/>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Qualification</label>
+                            <input type="text" name="emquali" class="form-control" placeholder="Your Qualification" required/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="form-group col-sm-6">
+                            <label>Select position</label>
+                            <select class="form-control" name="position" id="post" required >
+                                <label>Select position</label>
+                                <option>Full Stack Developer</option>
+                                <option>Web Developer</option>
+                                <option>Web Designer</option>
+                                <option>App Developer</option>
+                                <option>App Designer</option>
+                                <option>UX/UI Designer</option>
+                                <option>Wordpress Developer</option>
+                                <option>Virtual Assistant</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="Address">Current Address</label>
+                            <input type="text" name="city" class="form-control" placeholder="City and District" required/>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label for class="form-label">
+                                 Upload Resume/CV
+                                <span class="req">*</span>
+                            </label>
+                            <input type="file" name="emfile" class="form-control" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea  name="emessage" class="form-control" rows="5" placeholder="Tell me something about yourself ?" ></textarea>
+                        </div>
+                        
+                        <div><button class="btn" type="submit">Submit</button></div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+{% endblock %}

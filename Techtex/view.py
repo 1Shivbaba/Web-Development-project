@@ -2,6 +2,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render   
 from services.models import Service
 from about.models import About
+from careers.models import Careers
 from django.core.paginator import Paginator
 from contact_inquiry.models import Contact_Inquiry
 from django.core.mail import send_mail, EmailMultiAlternatives
@@ -83,11 +84,41 @@ def thank(request,thankyou):
     try:
         
         ename = request.POST['emname']
+        email = request.POST.get('emmail')
+        number = request.POST['mobile']
+        emql = request.POST.get('emquali')
+        empost = request.POST.get('position')
+        efile = request.POST.get('emfile')
+        emsg = request.POST.get('emessage')
+        emaddress = request.POST.get('city')
+
+        info = Careers(candidate_name=ename, candidate_mail=email, candidate_phone=number, candidate_quali=emql, candidate_post=empost, condidate_address=emaddress,condidate_message=emsg ,condidate_cv=efile)
+        info.save()
 
         data = {'title':'Thanks-candidate',
                 'ename':ename,
+                'email':email,
+                'number':number,
+                'emql':emql,
+                'efile':efile,
+                'empost':empost,
+                'emsg':emsg,
+                'emaddress':emaddress,
+                'error':True
                 
                 }
+        # Email sending start: 
+        subject = "Thanks to visit-Techtics technologies "
+        from_email = settings.EMAIL_HOST_USER
+        html_message = render_to_string('welcome.html',{'ename':ename})
+        to_email = email
+        Email = EmailMultiAlternatives(subject,html_message,from_email,[to_email])
+        Email.attach_alternative(html_message, "html/text")
+        Email.content_subtype= 'html'
+# Send a Attech file  
+                # with open("D://resume.pdf" 'rb') as f:
+                #      Email.attach( "D://resume.pdf" , f.read(), 'application/pdf')
+        Email.send()
         
     except Exception:
         pass 

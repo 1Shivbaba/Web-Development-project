@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'services',
     'about',
     'contact_inquiry',
+    'careers',
     'tinymce',
 ]
 
